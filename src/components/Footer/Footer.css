@@ -34,7 +34,7 @@
 }
 
 .footer-logo {
-  height: 150px;
+  height: 100px;
   width: auto;
   max-width: 160px;
   object-fit: contain;
@@ -99,50 +99,50 @@
     min-height: 140px;
     padding: 1rem 0;
   }
-  
+
   .footer-inner {
     padding: 0 1rem;
   }
-  
+
   .footer-content {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
   }
-  
+
   .footer-left {
     align-items: center;
   }
-  
+
   .footer-center {
     order: 3; /* 저작권을 맨 아래로 */
   }
-  
+
   .footer-right {
     justify-content: center;
     order: 2;
   }
-  
+
   .footer-contact {
     text-align: center;
   }
-  
+
   .footer-logo {
     height: 35px;
     max-width: 120px;
     margin-bottom: 0.3rem;
   }
-  
+
   .footer-desc {
     text-align: center;
     font-size: 0.8rem;
   }
-  
+
   .footer-contact h3 {
     font-size: 1rem;
     margin-bottom: 0.3rem;
   }
-  
+
   .footer-contact p {
     font-size: 0.8rem;
     margin: 0.2rem 0;
@@ -154,28 +154,28 @@
   .footer {
     min-height: 120px;
   }
-  
+
   .footer-content {
     gap: 0.8rem;
   }
-  
+
   .footer-logo {
     height: 30px;
     max-width: 100px;
   }
-  
+
   .footer-desc {
     font-size: 0.75rem;
   }
-  
+
   .footer-contact h3 {
     font-size: 0.9rem;
   }
-  
+
   .footer-contact p {
     font-size: 0.75rem;
   }
-  
+
   .footer-center p {
     font-size: 0.7rem;
   }
