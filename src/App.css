@@ -1,38 +1,49 @@
+/* src/App.css */
+
+/* 전역 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* App 컴포넌트 레이아웃 */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* 메인 콘텐츠 영역 */
+.main-content {
+  flex: 1;  /* 남은 공간을 모두 차지 */
+  padding-top: 80px; /* Header 높이만큼 여백 */
+  min-height: calc(100vh - 240px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 페이지 콘텐츠가 적을 때 Footer가 하단에 고정되도록 */
+@media (min-height: 600px) {
+  .main-content {
+    min-height: calc(100vh - 200px); /* Header + Footer 예상 높이 */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 80px; /* 모바일에서 Header 높이 */
+    padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding-top: 100px; /* 모바일에서 Header가 더 높아질 수 있음 */
   }
 }
