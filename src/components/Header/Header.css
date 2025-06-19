@@ -7,7 +7,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 100px;
+  height: clamp(70px, 10vw, 100px);
 }
 
 .header-container {
@@ -83,7 +83,7 @@
 /* 데스크톱 네비게이션 */
 .navigation {
   position: absolute;
-  left: 50%;
+  left: 85%;
   transform: translateX(-50%);
   display: flex;
 }

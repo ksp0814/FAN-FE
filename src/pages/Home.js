@@ -1,21 +1,21 @@
 import React from 'react';
+import HeroImg from '../assets/hero2.jpg';
+import './Home.css';
+
 
 const Home = () => {
   return (
-    
     <div>
-      <h1>K-경일이엔지</h1>
-      <p>송풍기 제작 및 수리 전문 업체입니다.</p>
-      <div>
-        <h2>주요 서비스</h2>
-        <ul>
-          <li>송풍기 제작</li>
-          <li>송풍기 수리</li>
-          <li>24시간 출장 A/S</li>
-        </ul>
+      <div className='hero'>
+        <img src={HeroImg} alt="히어로 이미지" className='hero-image' />
+        <div className='hero-content'>
+          <h1>회사명</h1>
+          <p>우리와 함께 성장하세요</p>
+        </div>
       </div>
     </div>
   );
 };
+
 
 export default Home;
