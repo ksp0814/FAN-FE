@@ -73,7 +73,6 @@ const Inquiry = () => {
     if (Object.keys(newErrors).length === 0) {
       setIsSubmitting(true);
       
-      // 제출 시뮬레이션
       setTimeout(() => {
         console.log('문의 데이터:', formData);
         alert('문의가 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.');
@@ -112,7 +111,7 @@ const Inquiry = () => {
         <form onSubmit={handleSubmit} className="inquiry-form">
           <div className="form-section">
             <h3>연락처 정보</h3>
-            <div className="form-row">
+            <div className="form-row-horizontal">
               <div className="form-group">
                 <label htmlFor="name">
                   <span className="label-icon">👤</span>
@@ -168,21 +167,51 @@ const Inquiry = () => {
           
           <div className="form-section">
             <h3>문의 내용</h3>
-            <div className="form-group full-width">
-              <label htmlFor="subject">
-                <span className="label-icon">📝</span>
-                제목
-              </label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleInputChange}
-                className={errors.subject ? 'error' : ''}
-                placeholder="문의 제목을 입력해주세요"
-              />
-              {errors.subject && <span className="error-message">{errors.subject}</span>}
+            <div className="form-row-horizontal">
+              <div className="form-group form-group-wide">
+                <label htmlFor="subject">
+                  <span className="label-icon">📝</span>
+                  제목
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  className={errors.subject ? 'error' : ''}
+                  placeholder="문의 제목을 입력해주세요"
+                />
+                {errors.subject && <span className="error-message">{errors.subject}</span>}
+              </div>
+              
+              <div className="form-group form-group-narrow">
+                <label htmlFor="file">
+                  <span className="label-icon">📎</span>
+                  파일 첨부
+                </label>
+                <div className="file-upload-area-compact">
+                  <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    onChange={handleFileChange}
+                    accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
+                    className="file-input"
+                  />
+                  <div className="file-upload-content-compact">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" fill="currentColor"/>
+                    </svg>
+                    <span>파일 선택</span>
+                  </div>
+                  {formData.file && (
+                    <div className="file-selected-compact">
+                      <span>{formData.file.name}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
             
             <div className="form-group full-width">
@@ -196,39 +225,10 @@ const Inquiry = () => {
                 value={formData.content}
                 onChange={handleInputChange}
                 className={errors.content ? 'error' : ''}
-                placeholder="송풍기 종류, 용량, 설치 환경 등 상세한 내용을 입력해주세요"
+                placeholder="공조기 종류, 용량, 설치 환경 등 상세한 내용을 입력해주세요"
                 rows="6"
               />
               {errors.content && <span className="error-message">{errors.content}</span>}
-            </div>
-            
-            <div className="form-group full-width">
-              <label htmlFor="file">
-                <span className="label-icon">📎</span>
-                파일 첨부
-              </label>
-              <div className="file-upload-area">
-                <input
-                  type="file"
-                  id="file"
-                  name="file"
-                  onChange={handleFileChange}
-                  accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
-                  className="file-input"
-                />
-                <div className="file-upload-content">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" fill="currentColor"/>
-                  </svg>
-                  <p>파일을 선택하거나 드래그해주세요</p>
-                  <small>JPG, PNG, PDF, DOC, DOCX (최대 10MB)</small>
-                </div>
-                {formData.file && (
-                  <div className="file-selected">
-                    <span>선택된 파일: {formData.file.name}</span>
-                  </div>
-                )}
-              </div>
             </div>
           </div>
           
