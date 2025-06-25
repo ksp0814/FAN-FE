@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Inquiry from './pages/Inquiry';
 import Service from './pages/Service';
+import Admin from './pages/Admin';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/inquiry" element={<Inquiry />} />
             <Route path="/service" element={<Service />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />
