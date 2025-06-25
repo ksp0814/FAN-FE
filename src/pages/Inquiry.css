@@ -1,5 +1,5 @@
 .inquiry-wrapper {
-  background: #E5E5E5;
+  background: #f8fafc;
   min-height: 100vh;
   padding: 40px 20px;
   display: flex;
@@ -8,20 +8,20 @@
 }
 
 .inquiry-container {
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.08);
+  border: 1px solid #f1f5f9;
   overflow: hidden;
 }
 
 .inquiry-header {
-  background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   color: white;
   text-align: center;
-  padding: 40px 40px;
+  padding: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -79,7 +79,7 @@
 }
 
 .inquiry-form {
-  padding: 50px;
+  padding: 30px;
 }
 
 .form-section {
@@ -87,23 +87,23 @@
 }
 
 .form-section h3 {
-  color: #2c3e50;
-  font-size: 1.3rem;
+  color: #1e40af;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 25px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #e3f2fd;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0f2fe;
   position: relative;
 }
 
 .form-section h3::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -1px;
   left: 0;
-  width: 50px;
-  height: 2px;
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  width: 40px;
+  height: 1px;
+  background: #3b82f6;
 }
 
 /* 새로운 가로 배치 스타일 */
@@ -155,12 +155,12 @@
 
 .form-group input,
 .form-group textarea {
-  padding: 16px 20px;
-  border: 2px solid #e1e8ed;
-  border-radius: 12px;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   font-size: 1rem;
-  transition: all 0.3s ease;
-  background: white;
+  transition: all 0.2s ease;
+  background: #ffffff;
   font-family: inherit;
   resize: vertical;
   width: 100%;
@@ -170,9 +170,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #4facfe;
-  box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1);
-  transform: translateY(-2px);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .form-group input.error,
@@ -295,21 +294,19 @@
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   color: white;
-  padding: 18px 40px;
+  padding: 14px 32px;
   border: none;
-  border-radius: 50px;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
-  position: relative;
-  overflow: hidden;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 .submit-btn::before {
@@ -328,8 +325,9 @@
 }
 
 .submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(79, 172, 254, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
 }
 
 .submit-btn:active {
