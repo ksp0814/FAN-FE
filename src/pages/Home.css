@@ -1,7 +1,7 @@
 /* 기본 히어로 스타일 (위와 동일) */
 .hero {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   position: relative;
   overflow: hidden;
   display: flex;

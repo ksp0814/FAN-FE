@@ -83,7 +83,7 @@
 /* 데스크톱 네비게이션 */
 .navigation {
   position: absolute;
-  left: 85%;
+  left: 75%;
   transform: translateX(-50%);
   display: flex;
 }

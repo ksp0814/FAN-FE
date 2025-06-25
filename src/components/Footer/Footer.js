@@ -16,7 +16,7 @@ const Footer = () => {
               className="footer-logo"
             />
             <p className="footer-desc">
-              송풍기 제작 및 수리 전문 업체 | 고객 만족 최우선
+              공조기 제작 및 수리 전문 업체 | 고객 만족 최우선
             </p>
           </div>
 
