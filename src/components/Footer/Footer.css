@@ -28,6 +28,7 @@
 /* 왼쪽 영역 - 로고 및 설명 */
 .footer-left {
   flex: 1;
+  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

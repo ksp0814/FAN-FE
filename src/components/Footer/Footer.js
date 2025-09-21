@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="footer-contact">
               <p>Tel: 010-5226-9487</p>
               <p>Email: rkd0rkd@naver.com</p>
-              <p>주소: 경기도 김포시</p>
+              <p>주소: 경기도 김포시 대곶면 대곶로 277-8</p>
             </div>
           </div>
         </div>

@@ -199,12 +199,6 @@ const Inquiry = () => {
                     accept=".jpg,.jpeg,.png,.pdf,.doc,.docx"
                     className="file-input"
                   />
-                  <div className="file-upload-content-compact">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" fill="currentColor"/>
-                    </svg>
-                    <span>파일 선택</span>
-                  </div>
                   {formData.file && (
                     <div className="file-selected-compact">
                       <span>{formData.file.name}</span>
