@@ -65,32 +65,53 @@ const Inquiry = () => {
     return newErrors;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    const newErrors = validateForm();
-    
-    if (Object.keys(newErrors).length === 0) {
-      setIsSubmitting(true);
-      
-      setTimeout(() => {
-        console.log('문의 데이터:', formData);
-        alert('문의가 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.');
-        
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          subject: '',
-          content: '',
-          file: null
-        });
-        setIsSubmitting(false);
-      }, 2000);
-    } else {
-      setErrors(newErrors);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const newErrors = validateForm();
+
+  if (Object.keys(newErrors).length === 0) {
+    setIsSubmitting(true);
+
+    // FormData 생성 (파일 포함)
+    const form = new FormData();
+    form.append('name', formData.name);
+    form.append('phoneNumber', formData.phone);
+    form.append('email', formData.email);
+    form.append('title', formData.subject);        // 제목 → title
+    form.append('description', formData.content);  // 상세내용 → description
+    if (formData.file) {
+      form.append('file', formData.file);
     }
-  };
+
+    try {
+      const response = await fetch('http://localhost:8080/Inquiry', {
+        method: 'POST',
+        body: form
+      });
+
+      if (!response.ok) {
+        throw new Error('서버 오류가 발생했습니다.');
+      }
+
+      alert('문의가 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.');
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        subject: '',
+        content: '',
+        file: null
+      });
+    } catch (error) {
+      alert(error.message || '문의 전송에 실패했습니다.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  } else {
+    setErrors(newErrors);
+  }
+};
 
   return (
     <div className="inquiry-wrapper">
