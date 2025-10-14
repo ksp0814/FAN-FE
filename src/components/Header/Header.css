@@ -34,7 +34,7 @@
 }
 
 .logo-image {
-  height: clamp(200px, 8vw, 70px);
+  height: clamp(32px, 6vw, 48px);   
   width: auto;
   max-width: clamp(150px, 25vw, 280px);
   object-fit: contain;

@@ -1,6 +1,5 @@
 // src/components/Footer.js
 import React from "react";
-import logoImg from "../../assets/logo.png";
 import "./Footer.css";
 
 const Footer = () => {
@@ -10,11 +9,6 @@ const Footer = () => {
         <div className="footer-content">
           {/* 왼쪽: 로고 및 회사 설명 */}
           <div className="footer-left">
-            <img
-              src={logoImg}
-              alt="K-경일이엔지 로고"
-              className="footer-logo"
-            />
             <p className="footer-desc">
               공조기 제작 및 수리 전문 업체 | 고객 만족 최우선
             </p>
