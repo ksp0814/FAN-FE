@@ -1,134 +1,142 @@
 .inquiry-wrapper {
-  background: #f8fafc;
-  height: calc(100vh - 100px - 100px); /* 헤더와 푸터 높이만큼 빼줌 */
-  min-height: 0;
-  margin-top: 100px; /* 헤더 높이만큼 아래로 */
-  padding: 0 5px;
+  margin-top: 100px;
+  min-height: calc(100vh - 200px);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 20px;
 }
 
 .inquiry-container {
-  max-width: 600px; /* 너비 축소 */
   width: 100%;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.08);
-  border: 1px solid #f1f5f9;
-  overflow: visible;
-  max-height: none; /* 높이 제한 해제 */
+  max-width: 800px;
+  background: #dedede;
+  border-radius: 10px;
+  padding: 40px;
 }
 
-.inquiry-header {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-  color: white;
+.inquiry-container h2 {
   text-align: center;
-  padding: 12px;
-  border-radius: 16px 16px 0 0;
-}
-
-.inquiry-header h2 {
-  font-size: 1.5rem;
-  margin-bottom: 6px;
-}
-
-.inquiry-header p {
-  font-size: 1rem;
-  margin: 0;
-}
-
-.inquiry-form {
-  padding: 16px;
-}
-
-.form-section {
-  margin-bottom: 20px;
-}
-
-.form-section h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  padding-bottom: 4px;
-}
-
-.form-row-horizontal {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-
-.form-row-horizontal .form-group {
-  flex: 1;
-  min-width: 120px;
-}
-
-.form-group-wide {
-  flex: 2;
-  min-width: 180px;
-}
-
-.form-group-narrow {
-  flex: 1;
-  min-width: 120px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 500;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .form-group {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  align-items: flex-start;
 }
 
 .form-group label {
-  font-size: 0.9rem;
-  margin-bottom: 4px;
+  width: 100px;
+  text-align: right;
+  margin-right: 15px;
+  padding-top: 8px;
+  color: #333;
+  font-size: 15px;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 8px 10px;
-  font-size: 0.95rem;
-  border-radius: 6px;
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  background: white;
+  font-size: 14px;
 }
 
-.form-group.full-width {
-  margin-bottom: 10px;
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
-.file-upload-area-compact {
-  height: 40px;
-  padding: 8px;
+.file-input-wrapper {
+  flex: 1;
+  background: white;
+  padding: 8px 12px;
 }
 
-.file-selected-compact {
-  font-size: 0.75rem;
-  padding: 2px 6px;
+.selected-files {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
 }
 
-.submit-container {
-  margin-top: 20px;
+.file-name {
+  margin: 2px 0;
 }
 
-.submit-btn {
-  padding: 10px 18px;
-  font-size: 1rem;
-  border-radius: 6px;
-  width: 100%;
+.privacy-check {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+  gap: 8px;
 }
 
-/* 반응형 */
+.privacy-check input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+}
+
+.privacy-check label {
+  cursor: pointer;
+  width: auto;
+  text-align: left;
+  padding-top: 0;
+  margin-right: 0;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 120px;
+  padding: 10px;
+  margin: 30px auto 0;
+  background: #666;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background: #555;
+}
+
 @media (max-width: 600px) {
   .inquiry-container {
-    max-width: 98vw;
-    border-radius: 8px;
+    padding: 20px;
   }
-  .inquiry-header {
-    border-radius: 8px 8px 0 0;
-    padding: 8px;
+  
+  .form-group {
+    flex-direction: column;
   }
-  .inquiry-form {
-    padding: 8px;
+  
+  .form-group label {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    padding-top: 0;
+  }
+  
+  .privacy-check {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
   }
 }
