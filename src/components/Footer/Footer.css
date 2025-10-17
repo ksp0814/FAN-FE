@@ -33,6 +33,10 @@
   align-items: center; /* 중앙 정렬 */
   justify-content: center; /* 수직 중앙 정렬 */
 }
+.footer-left p {
+  margin: 0;
+  font-size: 14px;  /* 기본 폰트 크기 설정 */
+}
 
 .footer-logo:hover {
   transform: scale(1.05);
@@ -44,6 +48,7 @@
   margin: 0;
   line-height: 1.4;
   text-align: left;
+  margin-bottom: 8px !important;  /* 아래 주소와의 간격 */
 }
 
 /* 중앙 영역 - 저작권 */

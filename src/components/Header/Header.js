@@ -33,6 +33,7 @@ const Header = () => {
           <span></span>
           <span></span>
           <span></span>
+          <span></span>
         </button>
         
         <nav className={`navigation ${isMenuOpen ? 'active' : ''}`}>
@@ -40,6 +41,7 @@ const Header = () => {
             <li><Link to="/about" onClick={closeMenu}>회사소개</Link></li>
             <li><Link to="/service" onClick={closeMenu}>서비스 소개</Link></li>
             <li><Link to="/inquiry" onClick={closeMenu}>견적 문의</Link></li>
+            <li><Link to="/login" onClick={closeMenu}>로그인</Link></li>
           </ul>
         </nav>
 

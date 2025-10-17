@@ -8,6 +8,8 @@ import About from './pages/About';
 import Inquiry from './pages/Inquiry';
 import Service from './pages/Service';
 import Admin from './pages/Admin';
+import Login from './pages/login';
+import PrivateRoute from './components/PrivateRoute';
 import './App.css';
 
 function App() {
@@ -21,7 +23,15 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/inquiry" element={<Inquiry />} />
             <Route path="/service" element={<Service />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/admin"
+              element={
+                <PrivateRoute>
+                  <Admin />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </main>
         <Footer />
