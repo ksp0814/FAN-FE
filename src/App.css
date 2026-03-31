@@ -1,55 +1,51 @@
-/* src/App.css */
-
-/* 전역 스타일 초기화 */
+/* ===== 전역 스타일 초기화 ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Noto Sans KR", sans-serif;
-  line-height: 1.6;
-  color: #333;
+html {
+  scroll-behavior: smooth;
 }
 
-/* App 컴포넌트 레이아웃 */
+body {
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== App 레이아웃 ===== */
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* 메인 콘텐츠 영역 */
 .main-content {
-  flex: 1 1 auto; /* 남은 공간을 모두 차지 */
+  flex: 1 1 auto;
   min-height: 0;
   display: flex;
   flex-direction: column;
 }
 
-.footer {
-  height: 100px; /* 푸터 높이 지정 */
-  flex-shrink: 0; /* 푸터가 줄어들지 않도록 설정 */
+/* ===== 공통 유틸리티 ===== */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* 페이지 콘텐츠가 적을 때 Footer가 하단에 고정되도록 */
-@media (min-height: 600px) {
-  .main-content {
-    min-height: calc(100vh - 200px); /* Header + Footer 예상 높이 */
-  }
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* 반응형 디자인 */
-@media (max-width: 768px) {
-  .main-content {
-    padding-top: 80px; /* 모바일에서 Header 높이 */
-    padding-bottom: 1rem;
-  }
+button {
+  font-family: inherit;
 }
 
-@media (max-width: 600px) {
-  .main-content {
-    padding-top: 100px; /* 모바일에서 Header가 더 높아질 수 있음 */
-  }
+input, textarea, select {
+  font-family: inherit;
 }

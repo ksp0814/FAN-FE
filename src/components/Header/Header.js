@@ -1,51 +1,66 @@
-// src/components/Header.js
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 import logoImg from '../../assets/logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  const closeMenu = () => {
+  useEffect(() => {
     setIsMenuOpen(false);
-  };
+  }, [location]);
+
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const navItems = [
+    { path: '/about', label: '회사소개' },
+    { path: '/service', label: '서비스 소개' },
+    { path: '/inquiry', label: '견적 문의' },
+  ];
 
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="header-container">
-        <div className="logo">
-          <Link to="/" className="logo-link" onClick={closeMenu}>
-            <img src={logoImg} alt="K-경일이엔지 로고" className="logo-image" />
-          </Link>
-        </div>
-        
-        {/* 햄버거 메뉴 버튼 */}
-        <button 
+        <Link to="/" className="logo-link" onClick={closeMenu}>
+          <img src={logoImg} alt="경일이엔지 로고" className="logo-image" />
+        </Link>
+
+        <button
           className={`hamburger ${isMenuOpen ? 'active' : ''}`}
-          onClick={toggleMenu}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="메뉴 열기/닫기"
         >
           <span></span>
           <span></span>
           <span></span>
-          <span></span>
         </button>
-        
-        <nav className={`navigation ${isMenuOpen ? 'active' : ''}`}>
+
+        <nav className={`nav ${isMenuOpen ? 'nav--open' : ''}`}>
           <ul className="nav-menu">
-            <li><Link to="/about" onClick={closeMenu}>회사소개</Link></li>
-            <li><Link to="/service" onClick={closeMenu}>서비스 소개</Link></li>
-            <li><Link to="/inquiry" onClick={closeMenu}>견적 문의</Link></li>
-            <li><Link to="/login" onClick={closeMenu}>로그인</Link></li>
+            {navItems.map(item => (
+              <li key={item.path}>
+                <Link
+                  to={item.path}
+                  className={`nav-link ${location.pathname === item.path ? 'nav-link--active' : ''}`}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+            <li>
+              <Link to="/login" className="nav-login-btn">관리자</Link>
+            </li>
           </ul>
         </nav>
 
-        {/* 모바일 메뉴 오버레이 */}
         {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
       </div>
     </header>
