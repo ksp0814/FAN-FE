@@ -16,8 +16,9 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <a className="skip-link" href="#main-content">본문으로 건너뛰기</a>
         <Header />
-        <main className="main-content">
+        <main id="main-content" className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
